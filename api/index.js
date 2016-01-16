@@ -5,8 +5,12 @@ const krouter = require('koa-router')
 
 module.exports = router
 
-router.get('/v1/tags', function *() {
-  this.body = yield Tags.find().
-    then(tags => yield transform(tags)).
-    catch(err => this.throw(412, err))
-})
+router.
+  get('/v1/tags', function *() {
+    try {
+      const tags = yield Tags.find()
+      this.body = yield transform(tags)
+    } catch (err) {
+      this.throw(412, err)
+    }
+  })
