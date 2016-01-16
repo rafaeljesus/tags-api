@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+const http = require('http')
+  , log = require('../lib/log')
+  , app = require('../')
+  , port = process.env.PORT || 3000
+
+http.createServer(app.callback())
+
+app.listen(port)
+
+log.info(`Tags Reporter API - port ${port}`)
