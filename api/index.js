@@ -1,5 +1,6 @@
 const krouter = require('koa-router')
   , Tags = require('./tags')
+  , JSONFiles = require('./json.files')
   , transform = require('./transform')
   , router = krouter()
 
@@ -8,8 +9,11 @@ module.exports = router
 router.
   get('/v1/tags', function *() {
     try {
-      const tags = yield Tags.find()
-      this.body = yield transform(tags)
+      const res = yield [
+        Tags.find(),
+        JSONFiles.find()
+      ]
+      this.body = yield transform(res)
     } catch (err) {
       this.throw(412, err)
     }
