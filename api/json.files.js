@@ -1,14 +1,14 @@
 const fs = require('fs')
-  , path = require('path')
-  , dataPath = path.join(__dirname, '../data')
+  , dataPath = require('path').join(__dirname, '../data')
 
 exports.find = () => {
   return listDataDir().then(files => {
     return Promise.all(files.map(file => {
       return new Promise((resolve, reject) => {
-        fs.readFile(`${dataPath}/${file}`, 'utf8', (err, json) => {
+        const path = `${dataPath}/${file}`
+        fs.readFile(path, 'utf8', (err, json) => {
           if (err) return reject(err)
-          const obj = parseJSON(json)
+          const obj = parseJSON(json, path)
           resolve(obj)
         })
       })
@@ -25,10 +25,11 @@ function listDataDir() {
   })
 }
 
-function parseJSON(json) {
+function parseJSON(json, path) {
   try {
     return JSON.parse(json)
   } catch (err) {
+    console.error(`file ${path} ignored`)
     return {}
   }
 }
