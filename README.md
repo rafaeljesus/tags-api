@@ -1,5 +1,7 @@
 ## Tags API
 
+[ ![Codeship Status for rafaeljesus/tags-api](https://codeship.com/projects/fbd54500-9f70-0133-87e5-3206c6610001/status?branch=master)](https://codeship.com/projects/127890) [![bitHound Overall Score](https://www.bithound.io/github/rafaeljesus/tags-api/badges/score.svg)](https://www.bithound.io/github/rafaeljesus/tags-api) [![bitHound Dependencies](https://www.bithound.io/github/rafaeljesus/tags-api/badges/dependencies.svg)](https://www.bithound.io/github/rafaeljesus/tags-api/master/dependencies/npm) [![bitHound Dev Dependencies](https://www.bithound.io/github/rafaeljesus/tags-api/badges/devDependencies.svg)](https://www.bithound.io/github/rafaeljesus/tags-api/master/dependencies/npm) [![bitHound Code](https://www.bithound.io/github/rafaeljesus/tags-api/badges/code.svg)](https://www.bithound.io/github/rafaeljesus/tags-api)
+
 Quick practical exam for node.js candidates.
 
 ## Requirements
