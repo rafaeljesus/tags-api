@@ -13,7 +13,7 @@ router.
         Tags.find(),
         JSONFiles.find()
       ]
-      this.body = yield transform(res)
+      this.body = yield transform(res[0], res[1])
     } catch (err) {
       this.throw(412, err)
     }

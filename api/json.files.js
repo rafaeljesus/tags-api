@@ -28,5 +28,7 @@ function listDataDir() {
 function parseJSON(json) {
   try {
     return JSON.parse(json)
-  } catch (err) {}
+  } catch (err) {
+    return {}
+  }
 }

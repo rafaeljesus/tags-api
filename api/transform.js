@@ -1,39 +1,31 @@
-const fs = require('fs')
-  , path = require('path')
-  , log = require('../lib/log')
-  , dataPath = path.join(__dirname, '../data')
+'use strict'
+
+const traverseJSON = require('../lib/traverseJSON')
+  , wrapGen = require('../lib/wrap.gen')
 
 module.exports = transform
 
-function *transform(tags) {
-  return listDataDir().
-    then(findJSONFile).
-    then(transform)
-}
+function transform(tags, jsonfiles) {
+  const values = wrapGen(traverseJSON(jsonfiles))
+  let valMap = {}
+  let tagMap = {}
 
-function listDataDir() {
-  return new Promise((resolve, reject) => {
-    fs.readdir(dataPath, (err, res) => {
-      if (err) return reject(err)
-      resolve(res)
-    })
+  values.forEach(val => {
+    valMap[val] = valMap[val] ? valMap[val] + 1 : 1
   })
-}
 
-function findJSONFile(files) {
-  return Promise.all(files.map(file => {
-    return new Promise((resolve, reject) => {
-      fs.readFile(`${dataPath}/${file}`, 'utf8', (err, json) => {
-        if (err) return reject(err)
-        const obj = parseJSON(json)
-        resolve(obj)
-      })
+  tags.forEach(tag => {
+    tagMap[tag] = valMap[tag] ? valMap[tag] : 0
+  })
+
+  return Object.
+    keys(tagMap).
+    sort((a, b) => tagMap[a] - tagMap[b]).
+    reverse().
+    map(key => {
+      return {
+        name: key,
+        total: tagMap[key]
+      }
     })
-  }))
-}
-
-function parseJSON(json) {
-  try {
-    return JSON.parse(json)
-  } catch (err) {}
 }
