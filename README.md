@@ -1,4 +1,4 @@
-## Tags Reporter
+## Tags API
 
 Quick practical exam for node.js candidates.
 
