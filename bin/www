@@ -8,4 +8,4 @@ http.createServer(app.callback())
 
 app.listen(port)
 
-console.log(`Tags Reporter API - port ${port}`)
+console.log(`Tags API - port ${port}`)
