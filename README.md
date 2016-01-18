@@ -4,8 +4,6 @@
 [![Docker Image Size](https://img.shields.io/imagelayers/image-size/rafaeljesus/tags-api/latest.svg)](https://hub.docker.com/r/rafaeljesus/tags-api/)
 [![Docker Image Pulls](https://img.shields.io/docker/pulls/rafaeljesus/tags-api.svg)](https://hub.docker.com/r/rafaeljesus/tags-api/)
 [![bitHound Overall Score](https://www.bithound.io/github/rafaeljesus/tags-api/badges/score.svg)](https://www.bithound.io/github/rafaeljesus/tags-api)
-[![bitHound Dependencies](https://www.bithound.io/github/rafaeljesus/tags-api/badges/dependencies.svg)](https://www.bithound.io/github/rafaeljesus/tags-api/master/dependencies/npm)
-[![bitHound Dev Dependencies](https://www.bithound.io/github/rafaeljesus/tags-api/badges/devDependencies.svg)](https://www.bithound.io/github/rafaeljesus/tags-api/master/dependencies/npm)
 [![bitHound Code](https://www.bithound.io/github/rafaeljesus/tags-api/badges/code.svg)](https://www.bithound.io/github/rafaeljesus/tags-api)
 
 Quick practical exam for node.js candidates.
