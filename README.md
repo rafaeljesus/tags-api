@@ -26,7 +26,7 @@ cats 0
 - use only core modules.
 - use the asynchronous variants of the file IO functions (eg. use `fs.readFile` not `fs.readFileSync`).
 - if any of the data files contain invalid JSON, log the error with `console.error` and continue, ignoring that file.
-- 
+
 ## Docker
 
 This repository has automated image builds on hub.docker.com.
