@@ -1,9 +1,9 @@
 'use strict'
 
 const traverseJSON = require('../lib/traverseJSON')
-  , wrapGen = require('../lib/wrap.gen')
-  , valMap = {}
-  , tagMap = {}
+const wrapGen = require('../lib/wrap.gen')
+const valMap = {}
+const tagMap = {}
 
 module.exports = transform
 

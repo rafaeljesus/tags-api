@@ -1,6 +1,7 @@
 const chai = require('chai')
-  , Tags = require('../api/tags')
-  , expect = chai.expect
+
+const Tags = require('../api/tags')
+const expect = chai.expect
 
 describe('TagsSpec', () => {
 

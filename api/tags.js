@@ -1,6 +1,6 @@
 const fs = require('fs')
-  , path = require('path')
-  , tagsfile = path.join(__dirname, '../tags.txt')
+const path = require('path')
+const tagsfile = path.join(__dirname, '../tags.txt')
 
 exports.find = () => {
   return new Promise((resolve, reject) => {

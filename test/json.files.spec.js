@@ -1,6 +1,7 @@
 const chai = require('chai')
-  , JSONFiles = require('../api/json.files')
-  , expect = chai.expect
+
+const JSONFiles = require('../api/json.files')
+const expect = chai.expect
 
 describe('JSONFilesSpec', () => {
 

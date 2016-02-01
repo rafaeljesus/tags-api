@@ -1,5 +1,5 @@
 const fs = require('fs')
-  , dataPath = require('path').join(__dirname, '../data')
+const dataPath = require('path').join(__dirname, '../data')
 
 exports.find = () => {
   return listDataDir().then(files => {

@@ -1,8 +1,9 @@
 const koa = require('koa')
-  , cors = require('kcors')
-  , logger = require('koa-logger')
-  , tagsAPI = require('./api')
-  , app = koa()
+const cors = require('kcors')
+const logger = require('koa-logger')
+
+const tagsAPI = require('./api')
+const app = koa()
 
 app.use(logger())
 app.use(cors({

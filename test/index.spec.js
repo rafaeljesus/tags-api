@@ -1,8 +1,9 @@
 const supertest = require('supertest')
-  , chai = require('chai')
-  , app = require('../')
-  , request = supertest(app.listen())
-  , expect = chai.expect
+const chai = require('chai')
+
+const app = require('../')
+const request = supertest(app.listen())
+const expect = chai.expect
 
 describe('TagsRoutesSpec', () => {
 
