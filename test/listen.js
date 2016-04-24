@@ -1,4 +1,8 @@
-import srv from '../'
+import micro from 'micro'
+
+import fn from '../'
+
+const srv = micro(fn)
 
 export default () => {
   return new Promise((resolve, reject) => {
