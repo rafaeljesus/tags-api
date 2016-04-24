@@ -1,16 +1,9 @@
-const chai = require('chai')
+import test from 'ava'
+import 'babel-register'
 
-const Tags = require('../api/tags')
-const expect = chai.expect
+import { findTags } from '../lib/tags'
 
-describe('TagsSpec', () => {
-
-  describe('.find', () => {
-    it('should find tags', () => {
-      return Tags.find().then(res => {
-        expect(res.length).to.eq(5)
-      })
-    })
-  })
-
+test('TagsSpec', async (t) => {
+  const tags = await findTags()
+  t.true(tags.length === 5)
 })

@@ -1,14 +1,15 @@
-const koa = require('koa')
-const cors = require('kcors')
-const logger = require('koa-logger')
+import micro from 'micro'
 
-const tagsAPI = require('./api')
-const app = koa()
+import { findTags } from './lib/tags'
+import { findFiles } from './lib/files'
+import { wrapReply } from './lib/wrapper'
+import transform from './lib/transform'
 
-app.use(logger())
-app.use(cors({
-  methods: ['GET']
+export default micro(wrapReply(async () => {
+  const [tags, files] = await Promise.all([
+    findTags(),
+    findFiles()
+  ])
+
+  return transform(tags, files)
 }))
-app.use(tagsAPI.routes())
-
-module.exports = app

@@ -1,19 +1,25 @@
-const supertest = require('supertest')
-const chai = require('chai')
+import test from 'ava'
+import 'babel-register'
+import request from 'request-promise'
 
-const app = require('../')
-const request = supertest(app.listen())
-const expect = chai.expect
+import listen from './listen'
 
-describe('TagsRoutesSpec', () => {
-
-  describe('GET /v1/tags', () => {
-    it('should find tags', done => {
-      request.
-        get('/v1/tags').
-        expect('Content-Type', /json/).
-        expect(200, done)
-    })
+test('GET /', async (t) => {
+  const url = await listen()
+  const body = await request({
+    uri: url,
+    method: 'GET',
+    json: true
   })
-
+  t.true(body.length === 5)
+  t.is(body[0].name, 'ipsum')
+  t.is(body[0].total, 3)
+  t.is(body[1].name, 'amet')
+  t.is(body[1].total, 2)
+  t.is(body[2].name, 'dolor')
+  t.is(body[2].total, 2)
+  t.is(body[3].name, 'sit')
+  t.is(body[3].total, 0)
+  t.is(body[4].name, 'lorem')
+  t.is(body[4].total, 0)
 })
