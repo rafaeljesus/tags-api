@@ -4,7 +4,7 @@
   "description": "Quick practical exam for node.js candidates.",
   "main": "index.js",
   "scripts": {
-    "start": "micro -p 3000 index.js",
+    "start": "micro -p 8080 index.js",
     "test": "NODE_ENV=test ava"
   },
   "keywords": [

@@ -1,5 +1,4 @@
 import test from 'ava'
-import 'babel-register'
 
 import { findFiles } from '../lib/files'
 
